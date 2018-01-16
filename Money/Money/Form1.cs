@@ -52,5 +52,33 @@ namespace Money
             bank += bob.GiveCash(5);
             UpdateForm();
         }
+
+        private void JoeGivesToBob_Click(object sender, EventArgs e)
+        {
+            if (joe.Cash > 0)
+            {
+                joe.Cash -= 10;
+                bob.ReceiveCash(10);
+                UpdateForm();
+            }
+            else
+            {
+                MessageBox.Show("Joe is out of money!!");
+            }
+        }
+
+        private void BobGivesToJoe_Click(object sender, EventArgs e)
+        {
+            if (bob.Cash > 0)
+            {
+                bob.Cash -= 5;
+                joe.ReceiveCash(5);
+                UpdateForm();
+            }
+            else
+            {
+                MessageBox.Show("Bob is out of money!!");
+            }
+        }
     }
 }
